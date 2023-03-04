@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tiefblick Studio</title>
+	<style>
+		body {
+			background-color: #F0EDEA;
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+		header {
+			background-color: #333;
+			color: #fff;
+			text-align: left;
+			height: 210px;
+		}
+		#logo {
+			position: absolute;
+			top: 300px;
+			left: 50%;
+			transform: translate(-50%, 0);
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		#title {
+			position: absolute;
+			background-color: #F0EDEA;
+			top: 0px;
+			left: 0px;
+			right:0px;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.seperator {
+			background-color: #333;
+			width: 100%;
+			height: 10px;
+
+		}
+		.banner {
+			background-image: url("Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_222e5a46-658e-4abe-8309-26e28603c7bf.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100%;
+			height: 1000px;
+			position: relative;
+			overflow: hidden;
+		}
+		.banner img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			opacity: 1;
+			transition: opacity 1s ease-in-out;
+		}
+		.banner img.fade-out {
+			opacity: 0;
+		}
+		.content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 20px;
+		}
+		.col {
+			flex-basis: calc(33.33% - 20px);
+			margin-bottom: 20px;
+			background-color: #f9f9f9;
+			padding: 20px;
+			box-sizing: border-box;
+			border: 1px solid #ccc;
+			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		}
+		.col h2 {
+			margin-top: 0;
+		}
+		footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+		.footer-links {
+			display: flex;
+			justify-content: center;
+			margin-top: 20px;
+		}
+		.footer-links a {
+			color: #fff;
+			margin: 0 10px;
+			text-decoration: none;
+			font-size: 20px;
+		}
+	</style>
+		<script>
+		var bannerImages = [
+		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_222e5a46-658e-4abe-8309-26e28603c7bf.png",
+		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_4931b981-7526-4697-ac49-2bf65c25a917.png",
+		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_cb15e7bb-cf6c-4603-9e50-f2428a368f90.png",
+		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_teenage__64690b86-dc64-4739-9b97-20f69c8bec4a.png",
+		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_teenage__cf37d71c-2841-44a7-83b6-c184f1771108.png",
+		];
+		var currentBannerIndex = 0;
+		
+
+		function fadeBanner() {
+			var banner = document.querySelector('.banner');
+			var currentBanner = banner.style.backgroundImage;
+			banner.style.transition = "background-image 1s ease-in-out";
+			banner.style.backgroundImage = "url('" + bannerImages[currentBannerIndex] + "')";
+			currentBannerIndex++;
+			if (currentBannerIndex == bannerImages.length) {
+				currentBannerIndex = 0;
+			}
+			setTimeout(fadeBanner, 15000);
+		}
+	</script>
+</head>
+<body onload="fadeBanner()">
+	<header>
+	</header>
+	<div id="logo">
+		
+	</div>
+	
+	<div id="title">
+	<img src="Images/logo_square.png" width="210px"	alt="Tiefblick Studio Logo">
+		<img src="Images/tiefblick_studio_1.png" alt="Tiefblick Studio Logo">
+	</div>
+	<div class="seperator"></div>
+	<div class="banner"></div>
+	<div class="seperator"></div>
+	<div class="content">
+		<div class="col">
+			<h2>Our Vision</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec tellus ac nisl ullamcorper lacinia. Donec pretium euismod metus, quis pellentesque enim volutpat a. Proin id lacinia mi.</p>
+		</div>
+		<div class="col">
+			<h2>Our Mission</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec tellus ac nisl ullamcorper lacinia. Donec pretium euismod metus, quis pellentesque enim volutpat a. Proin id lacinia mi.</p>
+		</div>
+		<div class="col">
+			<h2>Our People</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec tellus ac nisl ullamcorper lacinia. Donec pretium euismod metus, quis pellentesque enim volutpat a. Proin id lacinia mi.</p>
+		</div>
+	</div>
+	<footer>
+		<h3>Connect with us</h3>
+		<div class="footer-links">
+			<a href="#">Facebook</a>
+			<a href="#">Twitter</a>
+			<a href="#">Instagram</a>
+			<a href="#">LinkedIn</a>
+		</div>
+	</footer>
+	</html>
