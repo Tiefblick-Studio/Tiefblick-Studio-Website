@@ -1,11 +1,67 @@
+"
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Tiefblick Studio</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<style>
+		:root {
+		  --primary-color: #F2EAEA; 
+		  --secondary-color: #20454D;
+		  --accent-color1: #AD3A28;
+		  --accent-color2: #C8A530;
+		  --text-color: #20454D;
+		  --background-color: #F0EDEA;
+		}
+		
+		/* Baskerville web font for headings */
+		h1, h2, h3, h4, h5, h6 {
+		  font-family: 'Libre Baskerville', serif;
+		  font-weight: 400;
+		  letter-spacing: 0.05em;
+		}
+		
 		body {
-			background-color: #F0EDEA;
-			color:#0D315F;
+		  background-color: var(--background-color);
+		  color: var(--text-color);
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+		  color: var(--primary-color);
+		}
+
+		a {
+		  color: var(--primary-color);
+		  text-decoration: none;
+		}
+
+		a:hover {
+		  color: var(--secondary-color);
+		}
+
+		button {
+		  background-color: var(--primary-color);
+		  color: white;
+		}
+
+		button:hover {
+		  background-color: var(--secondary-color);
+		}
+
+		input[type="text"], input[type="email"], input[type="password"], textarea {
+		  border: 1px solid var(--secondary-color);
+		}
+
+		input[type="submit"] {
+		  background-color: var(--primary-color);
+		  color: white;
+		}
+
+		input[type="submit"]:hover {
+		  background-color: var(--secondary-color);
+		}
+		
+		body {
 			margin: 0;
 			padding: 0;
 			font-family: Verdana, sans-serif;
@@ -72,14 +128,31 @@
 			padding: 20px;
 		}
 		.col {
-			flex-basis: calc(33.33% - 20px);
+			width: 33%;
+			float: left;
 			margin-bottom: 20px;
-			background-color: #f9f9f9;
+			background-color: var(--secondary-color);
+			color: var(--primary-color);
 			padding: 20px;
 			box-sizing: border-box;
 			border: 1px solid #ccc;
 			box-shadow: 0 0 10px rgba(0,0,0,0.1);
 		}
+		/* Media query for devices in portrait mode */
+		@media (max-width: 768px) {
+		  .col {
+			flex-basis: 100%; !important;
+			width: auto; !important;
+			float: none; !important;
+			min-width: 0; !important;
+		  }
+		  
+		  /* Add some margin to the top of each col div to separate them */
+		  .col + .col {
+			margin-top: 20px; !important;
+		  }
+		}
+		
 		.col h2 {
 			margin-top: 0;
 		}
@@ -95,13 +168,16 @@
 			margin-top: 20px;
 		}
 		.footer-links a {
-			color: #fff;
 			margin: 0 10px;
-			text-decoration: none;
 			font-size: 20px;
 		}
+		
+		
 	</style>
-		<script>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<script>
 		var bannerImages = [
 		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_222e5a46-658e-4abe-8309-26e28603c7bf.webp",
 		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_4931b981-7526-4697-ac49-2bf65c25a917.webp",
@@ -162,4 +238,5 @@
 			<a href="#">LinkedIn</a>
 		</div>
 	</footer>
-	</html>
+</html>
+"
