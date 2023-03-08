@@ -3,7 +3,7 @@
 <html>
 <head>
 	<title>Tiefblick Studio</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width">
 	<style>
 		:root {
 		  --primary-color: #F2EAEA; 
@@ -17,7 +17,7 @@
 		/* Baskerville web font for headings */
 		h1, h2, h3, h4, h5, h6 {
 		  font-family: 'Libre Baskerville', serif;
-		  font-weight: 400;
+		  font-weight: 200;
 		  letter-spacing: 0.05em;
 		}
 		
@@ -27,7 +27,7 @@
 		}
 
 		h1, h2, h3, h4, h5, h6 {
-		  color: var(--primary-color);
+		  color: var(--secon-color);
 		}
 
 		a {
@@ -81,11 +81,26 @@
 			align-items: center;
 			justify-content: center;
 		}
-		
+		img.Image { max-width: 100%; max-height:200px;}
 		#title {
 			position: absolute;
-			background-color: #F0EDEA;
+			background-color: var(--background-color);
 			top: 0px;
+			left: 0px;
+			right:0px;
+			margin: 0.4em;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: left;
+		}
+		
+		#about {
+			position: absolute;
+			background-color: var(--accent-color1);
+			color: var(--background-color);
+			padding: 1em;
+			bottom: 0px;
 			left: 0px;
 			right:0px;
 			z-index: 1;
@@ -103,6 +118,7 @@
 			background-color: #333;
 			background-image: url("Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_222e5a46-658e-4abe-8309-26e28603c7bf.webp");
 			background-repeat: no-repeat;
+			background-position: center center;
 			background-size: cover;
 			width: 100%;
 			height: 1000px;
@@ -126,6 +142,9 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 			padding: 20px;
+		}
+		.row{
+		float: auto;
 		}
 		.col {
 			width: 33%;
@@ -209,11 +228,16 @@
 	</div>
 	
 	<div id="title">
-	<img src="Images/logo_square.webp" width="180px"	alt="Tiefblick Studio Logo">
-		<img src="Images/tiefblick_studio.png" alt="Tiefblick Studio Logo">
+		<div style="width:30%">
+			<img class="Image" src="Images/logo_square.webp" alt="Tiefblick Studio Logo"/>
+		</div>
+		<div class="row">
+		<h1>TIEFBLICK Studio</h1>
+		<h5>Transforming perspectives through play</h5>
+		</div>
 	</div>
 	<div class="separator"></div>
-	<div class="banner"></div>
+	<div class="banner"><div id="about">Tiefblick is a German word that translates to 'deep view', 'deep gaze', or 'deep perception'. At Tiefblick Studio, we believe in the power of looking beyond the surface and exploring the depth of ourselves to reveal hidden parts of us and bring them to the surface for personal growth and collective empowerment.</div></div>
 	<div class="separator"></div>
 	<div class="content">
 		<div class="col">
@@ -222,20 +246,20 @@
 		</div>
 		<div class="col">
 			<h2>Our Mission</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec tellus ac nisl ullamcorper lacinia. Donec pretium euismod metus, quis pellentesque enim volutpat a. Proin id lacinia mi.</p>
+			<p>Our social impact games, such as 'Archetypes: The Rite of Passage', are designed to help players explore deeper aspects of their psyche and learn about their strengths and shortcomings in a fun and engaging way.<br><br>
+			The stories we tell are addressing real world issues, like mental health, systematic oppression, and social stigma to give a few examples.
+			<br><br>We thrive to inspire players to embrace their unique gifts and to utilize the power of community to co-create the future.</p>
 		</div>
 		<div class="col">
 			<h2>Our People</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec tellus ac nisl ullamcorper lacinia. Donec pretium euismod metus, quis pellentesque enim volutpat a. Proin id lacinia mi.</p>
+			<p>Called into life by <a href="https://www.dominiksaur.com">Dominik Saur</a> we are currently actively looking for collaborators. If you resonate with the vision and mission or would love to learn more, please get in touch.</p>
 		</div>
 	</div>
 	<footer>
 		<h4>Connect with us</h3>
 		<div class="footer-links">
-			<a href="#">Facebook</a>
-			<a href="#">Twitter</a>
-			<a href="#">Instagram</a>
-			<a href="#">LinkedIn</a>
+			<a href="https://discord.gg/Sndp3Ypkvg">Discord</a>
+			<a href="https://www.linkedin.com/company/tiefblick-studio/">LinkedIn</a>
 		</div>
 	</footer>
 </html>
