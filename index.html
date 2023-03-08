@@ -8,8 +8,9 @@
 		:root {
 		  --primary-color: #F2EAEA; 
 		  --secondary-color: #20454D;
-		  --accent-color1: #AD3A28;
-		  --accent-color2: #C8A530;
+		  --accent-color1: rgba(173, 58, 40, 0.8);
+		  --accent-color2: rgb(214, 147, 46, 0.8);
+		  --accent-color3: rgba(48, 86, 16, 0.8);
 		  --text-color: #20454D;
 		  --background-color: #F0EDEA;
 		}
@@ -26,17 +27,20 @@
 		  color: var(--text-color);
 		}
 
-		h1, h2, h3, h4, h5, h6 {
-		  color: var(--secon-color);
+		h1, h2, h3{
+		  color: var(--secondary-color);
+		}
+		h4, h5, h6 {
+		  color: var(--background-color);
 		}
 
 		a {
-		  color: var(--primary-color);
+		  color: var(--accent-color2);
 		  text-decoration: none;
 		}
 
 		a:hover {
-		  color: var(--secondary-color);
+		  color: var(--accent-color1);
 		}
 
 		button {
@@ -67,10 +71,11 @@
 			font-family: Verdana, sans-serif;
 		}
 		header {
-			background-color: #F0EDEA;
-			color: #fff;
-			text-align: left;
-			height: 180px;
+			height: 190px;
+		}
+		#menu {
+			height: 90px;
+			background-color: var(--primary-color);
 		}
 		#logo {
 			position: absolute;
@@ -92,21 +97,17 @@
 			z-index: 1;
 			display: flex;
 			align-items: center;
-			justify-content: left;
+			justify-content: center;
 		}
 		
-		#about {
-			position: absolute;
-			background-color: var(--accent-color1);
-			color: var(--background-color);
-			padding: 1em;
-			bottom: 0px;
-			left: 0px;
-			right:0px;
-			z-index: 1;
-			display: flex;
+		.about {
+			position: relative;
+			left: 50%;
+			transform: translate(-50%, 0);
+			padding-bottom: 2em;
 			align-items: center;
-			justify-content: left;
+			justify-content: center;
+			max-width: 900px;
 		}
 		.separator {
 			background-color: #444;
@@ -121,7 +122,9 @@
 			background-position: center center;
 			background-size: cover;
 			width: 100%;
-			height: 1000px;
+			height: 60%;
+			max-height: 1000px;
+			min-height: 250px;
 			position: relative;
 			overflow: hidden;
 		}
@@ -138,24 +141,33 @@
 			opacity: 0;
 		}
 		.content {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			padding: 20px;
+			
+			padding: 1em;
+			text-align: justify-content;
 		}
 		.row{
 		float: auto;
 		}
+		.cols {
+			display: flex;
+			width: 100%;
+			max-width:900px;
+			position:relative;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
 		.col {
 			width: 33%;
 			float: left;
-			margin-bottom: 20px;
-			background-color: var(--secondary-color);
-			color: var(--primary-color);
-			padding: 20px;
+			margin-bottom: 1em;
+			background-color: var(--background-color);
+			padding: 0.8em;
 			box-sizing: border-box;
-			border: 1px solid #ccc;
+			border: 2px solid #333;
 			box-shadow: 0 0 10px rgba(0,0,0,0.1);
+			background-color: var(--accent-color1); color: var(--background-color); 
 		}
 		/* Media query for devices in portrait mode */
 		@media (max-width: 768px) {
@@ -165,7 +177,9 @@
 			float: none; !important;
 			min-width: 0; !important;
 		  }
-		  
+		  .banner {
+			height:40%;
+			}
 		  /* Add some margin to the top of each col div to separate them */
 		  .col + .col {
 			margin-top: 20px; !important;
@@ -222,44 +236,61 @@
 </head>
 <body onload="fadeBanner()">
 	<header>
-	</header>
-	<div id="logo">
-		
-	</div>
+		<div id="logo">
+		</div>
 	
 	<div id="title">
-		<div style="width:30%">
+		<div style="width:30%;max-width:200px">
 			<img class="Image" src="Images/logo_square.webp" alt="Tiefblick Studio Logo"/>
 		</div>
 		<div class="row">
 		<h1>TIEFBLICK Studio</h1>
-		<h5>Transforming perspectives through play</h5>
+		<h3>Transforming perspectives through play</h3>
 		</div>
 	</div>
+	</header>
+	
 	<div class="separator"></div>
-	<div class="banner"><div id="about">Tiefblick is a German word that translates to 'deep view', 'deep gaze', or 'deep perception'. At Tiefblick Studio, we believe in the power of looking beyond the surface and exploring the depth of ourselves to reveal hidden parts of us and bring them to the surface for personal growth and collective empowerment.</div></div>
+	<div class="banner"></div>
+
 	<div class="separator"></div>
 	<div class="content">
-		<div class="col">
-			<h2>Our Vision</h2>
-			<p>We envision a world in which the next generations are empowered to make healthy choices, not only for themselves, but for the collective. Transforming our eco systems, be it socially, environmentally, economically - starts by seeing the interconnectedness of all things. Building the connection with oneself and finding our own mana, our unique gifts and souls calling is the first step to create lasting change. Bringing people together to co-create and design the systems of tomorrow, amplifies the evolution and supports our communities needs.</p>
+	<div class="about">
+		<h2>About</h2>
+		Tiefblick is a German word that translates to 'deep view', 'deep gaze', or 'deep perception'.<br>At Tiefblick Studio, we believe in the power of looking beyond the surface and exploring the depth of ourselves to reveal hidden parts of us and bring them to the surface for personal growth and collective empowerment.
+	</div>
+	<p>
+	<div class="cols">
+		<div class="col" style="background-color:var(--accent-color3)">
+			<h4>Our Vision</h4>
+	
+			<p>We envision a world in which the next generations are empowered to make healthy choices, not only for themselves, but for the collective<br><br>Transforming our eco systems, be it socially, environmentally, economically - starts by seeing the interconnectedness of all things.<br><br>Building the connection with oneself and finding our own mana, our unique gifts and souls calling is the first step to create lasting change.<br><br>Bringing people together to co-create and design the systems of tomorrow, amplifies the evolution and supports our communities needs.</p>
 		</div>
-		<div class="col">
-			<h2>Our Mission</h2>
+		<div class="col" >
+			<h4>Our Mission</h4>
 			<p>Our social impact games, such as 'Archetypes: The Rite of Passage', are designed to help players explore deeper aspects of their psyche and learn about their strengths and shortcomings in a fun and engaging way.<br><br>
 			The stories we tell are addressing real world issues, like mental health, systematic oppression, and social stigma to give a few examples.
 			<br><br>We thrive to inspire players to embrace their unique gifts and to utilize the power of community to co-create the future.</p>
 		</div>
-		<div class="col">
-			<h2>Our People</h2>
-			<p>Called into life by <a href="https://www.dominiksaur.com">Dominik Saur</a> we are currently actively looking for collaborators. If you resonate with the vision and mission or would love to learn more, please get in touch.</p>
+		<div class="col" style="background-color:var(--accent-color2)">
+			<h4>Our People</h4>
+			<p>Called into life by Dominik we are currently actively looking for collaborators. If you resonate with the vision and mission or would love to learn more, please get in touch.</p>
 		</div>
 	</div>
+	<div class="about">
+		<h2>Archetypes: The Rite of Passage</h2>
+		<a target="_blank" href="https://store.steampowered.com/app/2096720/ARCHETYPES__The_Rite_Of_Passage/">Archtypes: Rite of Passage on Steam</a>
+	</div>
+	</p>
+	</div>
 	<footer>
-		<h4>Connect with us</h3>
-		<div class="footer-links">
-			<a href="https://discord.gg/Sndp3Ypkvg">Discord</a>
-			<a href="https://www.linkedin.com/company/tiefblick-studio/">LinkedIn</a>
+		<h4>Curious for more? Connect with us here:</h3>
+			<div class="footer-links">
+			
+			<a target="_blank" href="https://discord.gg/Sndp3Ypkvg">Discord</a>
+			<a target="_blank" href="https://www.linkedin.com/company/tiefblick-studio/">LinkedIn</a>
+			<a target="_blank" href="https://www.dominiksaur.com">Dominik Saur</a>
+			
 		</div>
 	</footer>
 </html>
