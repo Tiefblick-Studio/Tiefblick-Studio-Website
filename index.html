@@ -221,6 +221,12 @@
 		];
 		var currentBannerIndex = 0;
 		
+		function preloadImages() {
+		  for (var i = 0; i < bannerImages.length; i++) {
+			var img = new Image();
+			img.src = bannerImages[i];
+		  }
+		}
 
 		function fadeBanner() {
 			var banner = document.querySelector('.banner');
@@ -233,6 +239,8 @@
 			}
 			setTimeout(fadeBanner, 10000);
 		}
+		
+		window.onload = preloadImages;
 	</script>
 </head>
 <body onload="fadeBanner()">
@@ -245,7 +253,7 @@
 			<img class="Image" src="Images/logo_square.webp" alt="Tiefblick Studio Logo"/>
 		</div>
 		<div class="row">
-		<h1>TIEFBLICK Studio</h1>
+		<h1>TIEFBLICK STUDIO</h1>
 		<h3>Transforming perspectives through play</h3>
 		</div>
 	</div>
