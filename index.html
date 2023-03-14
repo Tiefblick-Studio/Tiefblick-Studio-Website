@@ -210,6 +210,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/png" href="Images/favicon.png"/>
 	<script>
 		var bannerImages = [
 		"Images/Screenshot_2022-09-26_005424.webp",
@@ -226,6 +227,8 @@
 			var img = new Image();
 			img.src = bannerImages[i];
 		  }
+		  fadeBanner();
+		  
 		}
 
 		function fadeBanner() {
@@ -243,7 +246,7 @@
 		window.onload = preloadImages;
 	</script>
 </head>
-<body onload="fadeBanner()">
+<body>
 	<header>
 		<div id="logo">
 		</div>
@@ -257,7 +260,7 @@
 		<h3>Transforming perspectives through play</h3>
 		</div>
 	</div>
-	<link rel="icon" type="image/png" href="Images/favicon.png"/>
+	
 	</header>
 	
 	<div class="separator"></div>
