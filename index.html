@@ -7,9 +7,9 @@
 		:root {
 		  --primary-color: #F2EAEA; 
 		  --secondary-color: #20454D;
-		  --accent-color1: rgba(173, 58, 40, 0.8);
-		  --accent-color2: rgb(214, 147, 46, 0.8);
-		  --accent-color3: rgba(48, 86, 16, 0.8);
+		  --accent-color1: rgba(173, 58, 40, 0.5);
+		  --accent-color2: rgb(214, 147, 46, 0.5);
+		  --accent-color3: rgba(48, 86, 16, 0.5);
 		  --text-color: #20454D;
 		  --background-color: #F0EDEA;
 		}
@@ -29,9 +29,12 @@
 
 		h1, h2, h3{
 		  color: var(--secondary-color);
+		  margin-top: 10px;
+		  margin-bottom: 10px;
 		}
 		h4, h5, h6 {
-		  color: var(--background-color);
+		  color: var(--secondary-color);
+		  font-weight:normal;
 		}
 
 		a {
@@ -161,13 +164,19 @@
 			width: 33%;
 			float: left;
 			margin-bottom: 1em;
-			background-color: var(--background-color);
 			padding: 0.8em;
 			box-sizing: border-box;
-			border: 2px solid #333;
+			<!--border: 2px solid #333;-->
 			box-shadow: 0 0 10px rgba(0,0,0,0.1);
-			background-color: var(--accent-color1); color: var(--background-color); 
+			background-color: var(--accent-color1); 
+			color: var(--secondary-color); 
 		}
+		
+		.LogoContainer{
+			width:30%;
+			max-width:200px;
+		}
+		
 		/* Media query for devices in portrait mode */
 		@media (max-width: 768px) {
 		  .col {
@@ -175,6 +184,10 @@
 			width: auto; !important;
 			float: none; !important;
 			min-width: 0; !important;
+		  }
+		  .LogoContainer
+		  {
+			width: 50%;
 		  }
 		  .banner {
 			height:40vh;
@@ -295,7 +308,7 @@
 		</div>
 	
 	<div id="title">
-		<div style="width:30%;max-width:200px">
+		<div class="LogoContainer">
 			<img class="Image" src="Images/logo_square.webp" alt="Tiefblick Studio Logo"/>
 		</div>
 		<div class="row">
@@ -318,7 +331,7 @@
 	<p>
 	<div class="cols">
 		<div class="col" style="background-color:var(--accent-color3)">
-			<h4>Our Vision</h4>
+			<h3>Our Vision</h3>
 			<p>We envision a world in which the next generations are empowered to make healthy choices, not only for themselves but for the collective.
 			<br><br>
 			Transforming our ecosystems, be it socially, environmentally, or economically - starts by seeing the interconnectedness of all things.
@@ -328,13 +341,13 @@
 			Bringing people together to co-create and design the systems of tomorrow, amplifies the evolution and supports our community's needs.</p>
 		</div>
 		<div class="col" >
-			<h4>Our Mission</h4>
+			<h3>Our Mission</h3>
 			<p>Our social impact games, such as 'Archetypes: The Rite of Passage', are designed to help players explore deeper aspects of their psyche and learn about their strengths and shortcomings in a fun and engaging way.<br><br>
 			The stories we tell are addressing real-world issues, like mental health, systematic oppression, and social stigma to give a few examples.
 			<br><br>We thrive to inspire players to embrace their unique gifts and to utilize the power of community to co-create the future.</p>
 		</div>
 		<div class="col" style="background-color:var(--accent-color2)">
-			<h4>Our People</h4>
+			<h3>Our People</h3>
 			<p>Called into life by Dominik we are currently actively looking for collaborators. If you resonate with the vision and mission or would love to learn more, please get in touch.</p>
 		</div>
 	</div>
