@@ -117,7 +117,6 @@
 		}
 		.banner {
 			background-color: #333;
-			background-image: url("Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_222e5a46-658e-4abe-8309-26e28603c7bf.webp");
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;
@@ -205,10 +204,47 @@
 			font-size: 20px;
 		}
 		
+
+	.loading{
+	  font-size: 55px;
+	  position: relative;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  width: 60px;
+	  height: 60px;
+		
+	}
+	.loading:after {
+	  content: '.';
+	  animation: dots 1s steps(5, end) infinite;
+	 
+	}
+
+	@keyframes dots {
+	  0%, 20% {
+		color: rgba(0,0,0,0);
+		text-shadow:
+		  .25em 0 0 rgba(0,0,0,0),
+		  .5em 0 0 rgba(0,0,0,0);}
+	  40% {
+		color: white;
+		text-shadow:
+		  .25em 0 0 rgba(0,0,0,0),
+		  .5em 0 0 rgba(0,0,0,0);}
+	  60% {
+		text-shadow:
+		  .25em 0 0 white,
+		  .5em 0 0 rgba(0,0,0,0);}
+	  80%, 100% {
+		text-shadow:
+		  .25em 0 0 white,
+		  .5em 0 0 white;}}
+		
 		
 	</style>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="styles.css">
+	<!--<link rel="stylesheet" href="styles.css">-->
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" href="Images/favicon.png"/>
 	<script>
@@ -226,12 +262,19 @@
 		  for (var i = 0; i < bannerImages.length; i++) {
 			var img = new Image();
 			img.src = bannerImages[i];
+			if(i == 0)
+				img.addEventListener("load", onFirstImageLoaded);
 		  }
-		  fadeBanner();
 		  
+		}
+		function onFirstImageLoaded()
+		{
+			fadeBanner();
 		}
 
 		function fadeBanner() {
+			var loading = document.querySelector('.loading');
+			loading.style.visibility = "hidden";
 			var banner = document.querySelector('.banner');
 			var currentBanner = banner.style.backgroundImage;
 			banner.style.transition = "background-image 1s ease-in-out";
@@ -264,7 +307,7 @@
 	</header>
 	
 	<div class="separator"></div>
-	<div class="banner"></div>
+	<div class="banner"><div class="loading"></div></div>
 
 	<div class="separator"></div>
 	<div class="content">
