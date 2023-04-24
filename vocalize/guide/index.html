@@ -6,15 +6,103 @@
 		.step {
 			display: block;
 			border: 1px solid #ccc;
-			padding: 10px;
-			margin: 20px;
 			background-color: #f5f5f5;
 			color: #333;
+			padding: 10px 10px 20px;
+			margin: 10px;
+		}
+		
+		.description {
+			border: 1px solid #ccc;
+			padding: 10px;
+			margin: 10px;
+			background-color: #FEFEFE;
+			color: #333;
+		}
+		.description p {
+			color: #555;
 		}
 
 		.container {
 			text-align: center;
+			padding: 50px;
+			margin: 10px;
 		}
+		
+		/* Customize the label (the container) */
+		.check {
+		  display: inline-block;
+		  position: relative;
+		  cursor: pointer;
+		  border-color: #000;
+		  border: 1px;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		/* Hide the browser's default checkbox */
+		.check input {
+		  position: absolute;
+		  opacity: 0;
+		  cursor: pointer;
+		  height: 0;
+		  width: 0;
+		}
+
+		/* Create a custom checkbox */
+		.checkmark {
+		  position: absolute;
+		  top: 19px;
+		  right: -50px;
+		  height: 35px;
+		  width: 35px;
+		  background-color: #ddd;
+		}
+
+		/* On mouse-over, add a grey background color */
+		.check:hover input ~ .checkmark {
+		  background-color: #ccc;
+		}
+
+		/* When the checkbox is checked, add a blue background */
+		.check input:checked ~ .checkmark {
+		  background-color: #2196F3;
+		}
+
+		/* Create the checkmark/indicator (hidden when not checked) */
+		.checkmark:after {
+		  content: "";
+		  position: absolute;
+		  display: none;
+		}
+
+		/* Show the checkmark when checked */
+		.check input:checked ~ .checkmark:after {
+		  display: block;
+		}
+
+		/* Style the checkmark/indicator */
+		.check .checkmark:after {
+		  right: 10px;
+		  top: 2px;
+		  width: 10px;
+		  height: 20px;
+		  border: solid white;
+		  border-width: 0 3px 3px 0;
+		  -webkit-transform: rotate(45deg);
+		  -ms-transform: rotate(45deg);
+		  transform: rotate(45deg);
+		}
+		
+		.step img
+		{
+			border: 0x000;
+			border-width: 2px;
+			border-style: solid;
+		}
+		
 		h1 {
 			font-family: 'Montserrat', sans-serif;
 		}
@@ -28,48 +116,91 @@
 </head>
 <body>
 	<div class="container">
-	<header>
-		<img src="vocalize_logo.png"/>
-		<h1>Vocalize Localization Setup Guide</h1>
-	</header>
-	
+		<header>
+			<img src="images/vocalize_logo.png"/>
+			<h1>Vocalize Localization Setup Guide</h1>
+		</header>
+		
 
-	<p>Welcome to the Vocalize Localization Setup Guide. Follow the steps below to set up localization for your Vocalize software.</p>
+		<p>Welcome to the Vocalize Localization Setup Guide. Follow the steps below to set up localization for your Vocalize software.</p>
 
-	<div class="step">
-		<h2>Step 1</h2>
-		<img src="1_account_creation.png" alt="Step 1 Account Creation">
-		<p>Open the <a href="https://console.cloud.google.com/">Google Cloud Console</a> to start the setup of the Vocalize Google Integration - create an account if necessary</p>
-	</div>
-
-	<div class="step">
-		<h2>Step 2</h2>
-		<p>Open the Vocalize software and click on the "Settings" icon on the top right corner of the screen.</p>
-		<img src="2_select_a_project.png" alt="Step 1 Account Creation">
-	</div>
-
-	<div class="step">
-		<h2>Step 3</h2>
-		<p>Open the Vocalize software and click on the "Settings" icon on the top right corner of the screen.</p>
-		<img src="3_create_new_project.png" alt="Step 1 Account Creation">
-	</div>
-	
-	<div class="step">
-		<h2>Step 4</h2>
-		<p>Open the Vocalize software and click on the "Settings" icon on the top right corner of the screen.</p>
-		<img src="4_name_project.png" alt="Step 1 Account Creation">
-	</div>
-	
-	<div class="step">
-		<h2>Step 5</h2>
-		<p>Open the Vocalize software and click on the "Settings" icon on the top right corner of the screen.</p>
-		<img src="5_select_project.png" alt="Step 1 Account Creation">
-	</div>
-
-	
-	<footer>
-	
-	</footer>
+		<div class="step">
+			<div class="description">
+				<label class="check">
+					<h2>1. Login to Google Cloud Console</h2>
+				  <input type="checkbox">
+				  <span class="checkmark"></span>
+				</label>
+				<p>Open the <a href="https://console.cloud.google.com/">Google Cloud Console</a> to start the setup of the Vocalize Google Integration - create an account if necessary</p>
+			</div>
+			<img src="images/1_account_creation.png" alt="Step 1 Account Creation">
+		</div>
+		<p/>
+		<div class="step">
+			<div class="description">
+				<label class="check">
+					<h2>2. Create a new project</h2>
+				  <input type="checkbox">
+				  <span class="checkmark"></span>
+				</label>
+				<p>Press "Select a project" in the top bar to open the dialog to select or create a new project. Press 'New Project' in the top right of the popup. Name the project "Vocalize" or "Vocalize Localization" and select an organisation.</p>
+			</div>
+			<img src="images/2_select_a_project.png" alt="Step 1 Account Creation">
+			<div class="description"><p>Press 'New Project' in the top right of the popup.</p></div>
+			<img src="images/3_create_new_project.png" alt="Step 1 Account Creation">
+			<div class="description"><p>Name the project "Vocalize" or "Vocalize Localization" and select an organisation.</p></div>
+			<img src="images/4_name_project.png" alt="Step 1 Account Creation">
+		</div>
+		<p/>
+		<div class="step">
+			<div class="description">
+				<label class="check">
+					<h2>3. Select project and enable apis</h2>
+				  <input type="checkbox">
+				  <span class="checkmark"></span>
+				</label>
+				<p>Open the Vocalize software and click on the "Settings" icon on the top right corner of the screen.</p>
+			</div>
+			<img src="images/6_enable_apis_and_services.png" alt="Step 1 Account Creation">
+			<img src="images/6_1_enable_apis_and_services.png" alt="Step 1 Account Creation">
+			<img src="images/6_2_enable_apis_and_services.png" alt="Step 1 Account Creation">
+			<img src="images/7_enable_google_sheets.png" alt="Step 1 Account Creation">
+			<img src="images/8_enable_google_text_to_speech.png" alt="Step 1 Account Creation">
+			<img src="images/9_enable_cloud_translation.png" alt="Step 1 Account Creation">
+		</div>
+		<p/>
+		<div class="step">
+			<div class="description">
+				<label class="check">
+					<h2>4. Create api key and OAuth credentials</h2>
+				  <input type="checkbox">
+				  <span class="checkmark"></span>
+				</label>
+				<p>Open the Vocalize software and click on the "Settings" icon on the top right corner of the screen.</p>
+			</div>
+			<img src="images/10_create_credentials.png" alt="Step 1 Account Creation">
+			<img src="images/11_create_api_key_and_edit.png" alt="Step 1 Account Creation">
+			<img src="images/12_create_oauth_client_id.png" alt="Step 1 Account Creation">
+			<img src="images/13_oauth_consent_screen.png" alt="Step 1 Account Creation">
+			<img src="images/14_oauth_consent_screen_config.png" alt="Step 1 Account Creation">
+			<img src="images/15_oauth_consent_screen_config.png" alt="Step 1 Account Creation">
+			<img src="images/16_oauth_client_id.png" alt="Step 1 Account Creation">
+		</div>
+		<p/>
+		<div class="step">
+			<label class="check">
+					<h2>5. Update Account Configuration in Unity Editor</h2>
+				  <input type="checkbox">
+				  <span class="checkmark"></span>
+				</label>
+			<p>Open the Vocalize software and click on the "Settings" icon on the top right corner of the screen.</p>
+			<img src="images/17_unity_config.png" alt="Step 1 Account Creation">
+		</div>
+		<p/>
+		
+		<footer>
+		
+		</footer>
 	</div>
 </body>
 </html>
