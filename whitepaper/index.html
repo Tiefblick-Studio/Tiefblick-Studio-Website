@@ -5,16 +5,51 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
+	
+	:root {
+		  --primary-color: #F2EAEA; 
+		  --secondary-color: #20454D;
+		  --accent-color1: rgba(173, 58, 40, 0.5);
+		  --accent-color2: rgb(214, 147, 46, 0.9);
+		  --accent-color3: rgba(48, 86, 16, 1);
+		  --text-color: #20454D;
+		  --background-color: #F0EDEA;
+		}
+		
+		/* Baskerville web font for headings */
+		h1, h2, h3, h4, h5, h6 {
+		  font-family: 'Libre Baskerville', serif;
+		  font-weight: 200;
+		  letter-spacing: 0.05em;
+		}
+		
+		#title
+		{
+			background-color: var(--background-color);
+			color: var(--text-color);
+			padding-bottom: 30px;
+		}
+		
+		body {
+		  background-color: var(--background-color);
+		  color: var(--text-color);
+		  height: 100%;
+		}
+	
 		body {
 			font-family: Arial, sans-serif;
 			margin: 0;
 			padding: 0;
 		}
 		
-		header {
+		.headline{
 			background-color: #333;
+			padding:20px;
+			width:100%;
+		}
+		
+		header {	
 			color: #fff;
-			padding: 20px;
 			text-align: center;
 			font-size: 24px;
 	
@@ -24,8 +59,8 @@
 			position: fixed;
 			bottom:50px;
 			width: 100%;
-			background-color: #eee;
-			padding: 10px;
+			background-color: var(--accent-color2);
+			padding: 5px;
 		}
 		
 		nav ul {
@@ -51,7 +86,7 @@
 		}
 		
 		nav a:hover {
-			background-color: #ccc;
+			background-color: var(--accent-color1);
 		}
 		
 		.container {
@@ -98,7 +133,16 @@
 </head>
 <body>
 	<header>
-		<h1>Tiefblick: A New Enterprise/Foundation Structure for Positive Social Impact</h1>
+	<div id="title">
+		<div class="logoContainer">
+			<img class="Image" src="images/logo_square.webp" alt="Tiefblick Studio Logo"/>
+		</div>
+		<div class="row">
+		<h1>TIEFBLICK STUDIO & FOUNDATION</h1>
+		<h3>Transforming perspectives through play</h3>
+		</div>
+	</div>
+	<div class="headline"><h1>A NEW ECO SYSTEM FOR POSITIVE SOCIAL CHANGE</h1></div>
 	</header>
 	
 	<nav>
@@ -135,8 +179,7 @@
 	
 	<div class="container" id="foundation">
 		<h2>The Foundation</h2>
-		<p>Tiefblick Foundation is a non-profit organization that owns 60% of Tiefblick Studio's ownership to prevent commercial greed-driven expansion with the goal to sell the company. The foundation is designed to receive grants and utilize them for the development of new projects in Tiefblick Studio.</p>
-		<p>If those projects are profitable, 60% of the profit will flow back to the foundation, which can either start new seed projects or invest in other social impact and community projects.</p>
+		<p>Tiefblick Foundation is a non-profit organization run autonomously with the purpose of empowering youth in the world wide and local community. The board of the foundation ensures that grants received and profits reinvested are serving the social impact mission. The Foundation is the main shareholder of Tiefblick Studio and receives 60% percent of the profits of Tiefblick Studio to seed new projects or invest into the wider community.</p>
 	</div>
 	
 	<div class="container" id="studio">
