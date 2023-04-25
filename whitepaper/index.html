@@ -89,6 +89,12 @@
 		}
 		
 		nav a:hover {
+			background-color: var(--accent-color2);
+		}
+	
+		
+		.active
+		{
 			background-color: var(--accent-color1);
 		}
 		
@@ -101,7 +107,7 @@
 		
 		.lastContainer
 		{
-			margin-bottom: 100px;
+			margin-bottom: 200px;
 		}
 		
 		h2 {
@@ -144,7 +150,7 @@
 			
 			.lastContainer
 			{
-				margin-bottom: 250px;
+				margin-bottom: 600px;
 			}
 		}
 	</style>
@@ -174,34 +180,34 @@
 			<li><a href="#conclusion">Conclusion</a></li>
 		</ul>
 	</nav>
-	<div class="container" id="introduction">
+	<section class="container" id="introduction">
 		<h2>Introduction</h2>
 		<p>At Tiefblick, our vision is a world where individuals of the next generation are empowered to make healthy choices for themselves and the collective. We believe in the transformative power of games and play to inspire self-exploration, personal growth, and positive social change. Our mission is to create games that empower individuals and communities to seek and embrace their unique gifts and co-create a sustainable future.</p>
 		<p>The name, Tiefblick, translates from German to 'deep view', 'deep gaze', or 'deep perception', representing our commitment to encouraging players to explore their inner worlds, their biases and perspectives and to understand their souls calling.</p>
 		<p>To ensure the longevity and alignment with our mission and values, we have developed a unique enterprise/foundation structure. Our goal is to provide value to the community and the people, and as such, we have established Tiefblick Foundation, a non-profit organization, and Tiefblick Studio, a social enterprise allowed to make a profit. In this paper, we will outline the structure, values, and profit model of Tiefblick.</p>
 		
-	</div>
+	</section>
 	
-	<div class="container" id="values">
+	<section class="container" id="values">
 		<h2>Our Values</h2>
 		<p>At Tiefblick, our core values guide our decision-making, inform our actions, and shape our culture.</p>
 		<p>We prioritize <b>integrity</b>, <b>transparency</b>, and <b>authenticity</b> in all of our interactions with others, be it community or partners. We believe in <b>equality</b>, <b>fairness</b>, and mutual <b>respect</b> and strive to create an environment where everyone feels heard, seen, and valued.</p>
 		<p>We prioritize the <b>wellbeing</b> of our team members and recognize that mental and physical health are essential to <b>sustainable</b> and <b>impactful</b> work. We embrace <b>sustainability</b> and honor the resources we are trusted with, and we are committed to minimizing our footprint on the environment.
 		<p>Finally, we believe in the power of actions - not words - to drive positive social change - <b>accountability</b> to walk the talk and admitting our shortcomings with <b>love</b> and <b>compassion</b> is the first step in doing better together.</p>
-	</div>
+	</section>
 	
-	<div class="container" id="structure">
+	<section class="container" id="structure">
 		<h2>The Tiefblick Structure</h2>
 		<p>To safeguard our vision and mission, Tiefblick Foundation will own 60% of Tiefblick Studio. This ownership structure is designed to prevent commercial greed-driven expansion with the goal of selling the company. The remaining 40% of Tiefblick Studio is co-owned by the collective who make Tiefblick Studio operational.</p>
 		<p>These shares are non-transferable and provide partners with a chance to gain part of the profits in the form of a dividend. There will be flat hierarchies in the partnership, and everyone who joins will become a partner for the time he is an operational contributor to the studio, and will receive an annual share dividend allocation measured by the amount of time contributed to the mission and vision.</p>
-	</div>
+	</section>
 	
-	<div class="container" id="foundation">
+	<section class="container" id="foundation">
 		<h2>The Foundation</h2>
 		<p>Tiefblick Foundation is a non-profit organization run autonomously with the purpose of empowering youth in the world wide and local community. The board of the foundation ensures that grants received and profits reinvested are serving the social impact mission. The Foundation is the main shareholder of Tiefblick Studio and receives 60% percent of the profits of Tiefblick Studio to seed new projects or invest into the wider community.</p>
-	</div>
+	</section>
 	
-	<div class="container" id="studio">
+	<section class="container" id="studio">
 		<h2>The Studio</h2>
 		<p>Tiefblick Studio is a social enterprise focused on creating games that drive positive social change. Our games are designed to inspire self-exploration and a deeper understanding of one's inner and outer world, leading to personal empowerment and growth. We are committed to addressing important social issues and current systematic challenges through our games. Our core values guide our decision-making, inform our actions, and shape our culture. We prioritize integrity, transparency, and authenticity in all of our interactions.</p>
 
@@ -211,18 +217,53 @@
 		<h3>Compensation Model</h3>
 		<p>The compensation model is designed to provide fair compensation to all contributors while maximizing social impact. Tiefblick Studio will offer a fixed rate for all contributors, which will not try to compete with market prices for certain job markets but serve as a basic compensation for time and effort. The rate will be above minimum wage and will try to support people to get their basic needs met. This basic income can be changed by the board of the foundation and partners if sustainable growth allows it. On top of this basic income, dividends at the end of the cycles will help to grow impact and partners' personal sustainability. It is important to note that at the early stage every partner requires their own streams of income outside of Tiefblick, so the organization can slowly grow and expand sustainably without burning through investments that are coming from the non-profit sector, such as grants for social impact.</p>
 		<p>Grants received through partnerships will not be included into the dividend calculations, but soley utilized to seed new projects.</p>
-	</div>
+	</section>
 	
-	<div class="container lastContainer" id="conclusion">
+	<section class="container lastContainer" id="conclusion">
 		<h2>Conclusion</h2>
 		<p>Tiefblick Studio and Foundation are designed to drive positive social change through the creation of games that inspire self-exploration and personal growth. Our vision is a world where individuals of the next generation are empowered to make healthy choices for themselves and the collective. We believe that games and play have the power to transform individuals and communities, and we are committed to addressing important social issues and current systematic challenges through our games.</p>
 
 		<p>Our profit model is designed to provide value to the community and people, and our core values prioritize integrity, transparency, and authenticity.</p>
-	</div>
-	<br>
-	<br>
-	<br>
-	<br>
+	</section>
 	<footer>
 	Tiefblick Whitepaper | Version 0.1 | 25.04.2023
 	</footer>
+	<script>
+	const sections = document.querySelectorAll('section');
+	
+
+	
+	function getClosestToTop() {
+	  let closestDistance = Infinity;
+	  let closestSection = null;
+
+	  sections.forEach((section) => {
+		const distanceToTop = section.getBoundingClientRect().top;
+		const isInsideViewport = distanceToTop >= 0 && distanceToTop <= window.innerHeight;
+		
+		if (isInsideViewport && distanceToTop < closestDistance) {
+		  closestDistance = distanceToTop;
+		  closestSection = section;
+		}
+	  });
+
+	  return closestSection;
+	}
+
+	window.addEventListener("scroll", () => {
+	const links = document.querySelectorAll('nav a');
+  
+	  // Loop through each link and remove the active class
+	  links.forEach(function(link) {
+		link.classList.remove('hover');
+	  });
+	  const closestSection = getClosestToTop();
+	  const activeNavElement = document.querySelector(`nav ul li a[href="#${closestSection.id}"]`);
+	  activeNavElement.classList.add("active");
+
+	  const otherNavElements = document.querySelectorAll("nav ul li a:not([href='#" + closestSection.id + "'])");
+	  otherNavElements.forEach((navElement) => {
+		navElement.classList.remove("active");
+	  });
+	});
+	</script>
