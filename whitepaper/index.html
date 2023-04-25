@@ -75,12 +75,17 @@
 		}
 		
 		nav li {
+			justify-content: space-around;
+			display: flex;
+			flex:1;
 			margin: 0;
 			padding: 0;
 		}
 		
 		nav a {
-			display: block;
+			justify-content: space-around;
+			display: flex;
+			flex:1;
 			padding: 10px;
 			color: var(--primary-color);
 			text-decoration: none;
@@ -133,6 +138,9 @@
 			text-align: center;
 			font-size: 14px;
 		}
+		flex{
+			display: flex;
+		}
 		
 		@media (max-width: 767px) {
 			header {
@@ -172,12 +180,12 @@
 	
 	<nav>
 		<ul>
-			<li><a href="#introduction">Introduction</a></li>
-			<li><a href="#values">Our Values</a></li>
-			<li><a href="#structure">The Tiefblick Structure</a></li>
-			<li><a href="#foundation">The Foundation</a></li>
-			<li><a href="#studio">The Studio</a></li>
-			<li><a href="#conclusion">Conclusion</a></li>
+			<li><a href="#introduction" class="flex">Introduction</a></li>
+			<li><a href="#values" class="flex">Our Values</a></li>
+			<li><a href="#structure" class="flex">The Tiefblick Structure</a></li>
+			<li><a href="#foundation" class="flex">The Foundation</a></li>
+			<li><a href="#studio" class="flex">The Studio</a></li>
+			<li><a href="#conclusion" class="flex">Conclusion</a></li>
 		</ul>
 	</nav>
 	<section class="container" id="introduction">
