@@ -7,6 +7,8 @@
 		:root {
 		  --primary-color: #F2EAEA; 
 		  --secondary-color: #20454D;
+		  --link-color1: rgba(173, 58, 40, 1);
+		  --link-color2: rgba(173, 58, 40, 0.8);
 		  --accent-color1: rgba(173, 58, 40, 0.5);
 		  --accent-color2: rgb(214, 147, 46, 0.5);
 		  --accent-color3: rgba(48, 86, 16, 0.5);
@@ -38,12 +40,12 @@
 		}
 
 		a {
-		  color: var(--accent-color2);
+		  color: var(--link-color1);
 		  text-decoration: none;
 		}
 
 		a:hover {
-		  color: var(--accent-color1);
+		  color: var(--link-color2);
 		}
 
 		button {
@@ -57,11 +59,13 @@
 
 		input[type="text"], input[type="email"], input[type="password"], textarea {
 		  border: 1px solid var(--secondary-color);
+		  width: 300px;
 		}
 
 		input[type="submit"] {
-		  background-color: var(--primary-color);
+		  background-color: var(--accent-color1);
 		  color: white;
+		  width: 300px;
 		}
 
 		input[type="submit"]:hover {
@@ -73,8 +77,13 @@
 			padding: 0;
 			font-family: Verdana, sans-serif;
 		}
+		form {
+		  display: flex;
+		  flex-direction: column;
+		  align-items: flex-start;
+		}
 		header {
-			height: 210px;
+			height: 310px;
 		}
 		#menu {
 			height: 90px;
@@ -89,7 +98,14 @@
 			align-items: center;
 			justify-content: center;
 		}
-		img.Image { max-width: 100%; max-height:200px;}
+		
+		#contact {
+			
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		img.Image { max-width: 100%; max-height:300px;}
 		#title {
 			position: absolute;
 			background-color: var(--background-color);
@@ -148,7 +164,7 @@
 			text-align: justify-content;
 		}
 		.row{
-		float: auto;
+		
 		}
 		.cols {
 			display: flex;
@@ -171,10 +187,22 @@
 			background-color: var(--accent-color1); 
 			color: var(--secondary-color); 
 		}
+		.col-one-third {
+			width: 33%;
+			float: left;
+			box-sizing: border-box;
+			padding-bottom: 1em;
+		}
+		.col-two-third {
+			width: 66%;
+			float: left;
+			box-sizing: border-box;
+			padding-left:1em;
+		}
 		
 		.LogoContainer{
 			width:30%;
-			max-width:200px;
+			max-width:300px;
 		}
 		
 		/* Media query for devices in portrait mode */
@@ -259,22 +287,22 @@
 	<meta charset="utf-8">
 	<!--<link rel="stylesheet" href="styles.css">-->
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
-	<link rel="icon" type="image/png" href="Images/favicon.png"/>
+	<link rel="icon" type="image/png" href="images/favicon.png"/>
 	<script>
-		var bannerImages = [
-		"Images/Screenshot_2022-09-26_005424.webp",
-		"Images/Screenshot_2022-09-26_010531.webp",
-		"Images/Screenshot_2022-09-26_005655.webp",
-		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_4931b981-7526-4697-ac49-2bf65c25a917.webp",
-		"Images/Screenshot_2022-09-26_010753.webp",
-		"Images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_a717fdb6-c2b2-4585-b2f9-4d63085b9edd.webp"
+		var bannerimages = [
+		"images/Screenshot_2022-09-26_005424.webp",
+		"images/Screenshot_2022-09-26_010531.webp",
+		"images/Screenshot_2022-09-26_005655.webp",
+		"images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_4931b981-7526-4697-ac49-2bf65c25a917.webp",
+		"images/Screenshot_2022-09-26_010753.webp",
+		"images/Domigotchi_photo-realistic_motivating_coloful_photo_of_friendly_a717fdb6-c2b2-4585-b2f9-4d63085b9edd.webp"
 		];
 		var currentBannerIndex = 0;
 		
-		function preloadImages() {
-		  for (var i = 0; i < bannerImages.length; i++) {
+		function preloadimages() {
+		  for (var i = 0; i < bannerimages.length; i++) {
 			var img = new Image();
-			img.src = bannerImages[i];
+			img.src = bannerimages[i];
 			if(i == 0)
 				img.addEventListener("load", onFirstImageLoaded);
 		  }
@@ -291,15 +319,15 @@
 			var banner = document.querySelector('.banner');
 			var currentBanner = banner.style.backgroundImage;
 			banner.style.transition = "background-image 1s ease-in-out";
-			banner.style.backgroundImage = "url('" + bannerImages[currentBannerIndex] + "')";
+			banner.style.backgroundImage = "url('" + bannerimages[currentBannerIndex] + "')";
 			currentBannerIndex++;
-			if (currentBannerIndex == bannerImages.length) {
+			if (currentBannerIndex == bannerimages.length) {
 				currentBannerIndex = 0;
 			}
 			setTimeout(fadeBanner, 10000);
 		}
 		
-		window.onload = preloadImages;
+		window.onload = preloadimages;
 	</script>
 </head>
 <body>
@@ -309,8 +337,9 @@
 	
 	<div id="title">
 		<div class="LogoContainer">
-			<img class="Image" src="Images/logo_square.webp" alt="Tiefblick Studio Logo"/>
+			<img class="Image" src="images/logo_square.webp" alt="Tiefblick Studio Logo"/>
 		</div>
+		<br>
 		<div class="row">
 		<h1>TIEFBLICK STUDIO</h1>
 		<h3>Transforming perspectives through play</h3>
@@ -324,11 +353,24 @@
 
 	<div class="separator"></div>
 	<div class="content">
+	
 	<div class="about">
-		<h2>About</h2>
-		Tiefblick Studio is a collaborative game development studio focused on creating games that inspire personal growth and positive social impact.<br><br>
+		<h2>About "Archetypes: The Rite of Passage"</h2>
+		Our first project is a self-exploration journey, aiming to support young males to understand their own archetypal blueprint and find their confidence in a world of ever-changing definition of healthy masculinity.
+		<br><br>
+		Find out more about our current project on the steam store page and check out the demo:<br>
+		<a target="_blank" href="https://store.steampowered.com/app/2096720/ARCHETYPES__The_Rite_Of_Passage/">Archetypes: Rite of Passage on Steam</a>
+	</div>
+	
+	
+	<div class="about">
+		<h2>About Tiefblick</h2>
+		Tiefblick Studio aims to be a collaborative game development studio focused on creating games that inspire personal growth and positive social impact.<br><br>
 		Our name, Tiefblick, translates from German to 'deep view', 'deep gaze', or 'deep perception', representing our commitment to encouraging players to explore their inner worlds, their biases and perspectives and to understand their souls calling.<br><br>We believe in the power of community and co-creation to build a brighter future, and strive to create a culture of integrity, equality, compassion, wellbeing, and sustainability in all aspects of our work. Through our games, we aim to address important social issues and inspire players to take action towards a more just and equitable world.
 	</div>
+	
+	<div class="about">
+	
 	<p>
 	<div class="cols">
 		<div class="col" style="background-color:var(--accent-color3)">
@@ -344,23 +386,61 @@
 			<p>At Tiefblick Studio, our core values guide our decision-making, inform our actions, and shape our culture.<br><br>We prioritize integrity, transparency, and authenticity in all of our interactions with team members, community, and partners.<br><br>We believe in equality, fairness, and mutual respect, and we strive to create an environment where everyone feels heard, seen and valued.<br><br>We prioritize the wellbeing of our team members and recognize that mental and physical health are essential to sustainable and impactful work.<br><br>We embrace sustainability and honor the resources we are trusted with and are committed to minimizing our impact on the environment.<br><br>Finally, we believe in the power of games to transform lives and communities and are passionate about creating games that drive positive social change.</p>
 		</div>
 	</div>
-	<div class="about">
-		<h2>Archetypes: The Rite of Passage</h2>
-		This first project is a self-exploration journey, aiming to support young males to understand their own archetypal blueprint and find their confidence in a world of ever-changing definition of healthy masculinity.
-		<br><br>
-		Find out more about our current project on the steam store page and check out our demo:
-		<a target="_blank" href="https://store.steampowered.com/app/2096720/ARCHETYPES__The_Rite_Of_Passage/">Archetypes: Rite of Passage on Steam</a>
-	</div>
-	</p>
-	</div>
-	<footer>
-		Connect with us:
-			<div class="footer-links">
+	<div>
+		<h2>About the Team</h2>
+			We are currently still elaborating the team and the potential partners joining the venture.
+			To find out more about the vision - check out the <a target="_blank" href="https://www.tiefblick.studio/whitepaper/index.html">Whitepaper</a> or get in touch with Dominik.
+			<br>
+			<br>
+			<br>
+		<div class="cols">
+			<div class="col-one-third">
+				<img width="300" src="images/dominik.webp"/>
+			</div>
+			<div class="col-two-third">
 			
-			<a target="_blank" href="https://discord.gg/Sndp3Ypkvg">Discord</a>
-			<a target="_blank" href="https://www.linkedin.com/company/tiefblick-studio/">LinkedIn</a>
-			<a target="_blank" href="https://www.dominiksaur.com">Dominik Saur</a>
+			
+			<h3>Dominik Saur<br>Founder and Visionary at Tiefblick</h3>
+			Dominik has worked for over 12 years in the Game Industry and worked for big game publishers like Gameforge and Innogames, and as well for smaller indie studios like Gbanga.<br><br>Over the last 4 years, inspired by his personal healing journey, he changed his focus to support his community with wellbeing tools. As a workshop facilitator for inner child work, he has been running small in-person workshops in Auckland, and bigger workshops at festivals like NZ Spirit Festival.<br><br>One of his recent roles has been to support the team at SkillsVR as a Wellbeing Advisor. Currently he is working as an independant game developer for Futureverse and volunteers as a board member for the Mankind Project New Zealand to support men on their journey of self discovery.<br><br>
+			Find out more about <a target="_blank" href="https://www.dominiksaur.com">Dominik Saur</a>.
+			</div>
+			
 			
 		</div>
+	</div>
+	
+	</p>
+	</div>
+	
+	
+	
+	<footer>
+	<div>
+	Connect with us via
+			<div class="footer-links">
+			
+			<a target="_blank" href="https://discord.gg/Sndp3Ypkvg"><img width="130" src="images/discord.svg"/></a>
+			<a target="_blank" href="https://www.linkedin.com/company/tiefblick-studio/"><img width="100" src="images/li-logo.png"/></a>
+			
+			
+		</div>
+	</div>
+	<br>
+	or contact us.
+	<div id="contact">
+	
+		<form action="https://api.staticforms.xyz/submit" method="post">
+			<!-- Replace with accesKey sent to your email -->
+			<input type="hidden" name="accessKey" value="252b6a3a-8d16-43cd-9ba0-767d0c382d80"> <!-- Required -->
+			Name:<input width="400" type="text" name="name"><br> <!-- Optional -->
+			<input type="hidden" name="subject" value="Tiefblick Studio Website Contact Form">
+			Email:<input width="400" type="email" name="email"><br> <!-- Optional -->
+			Message:<textarea width="400" height"100" name="message"></textarea><br> <!-- Optional -->
+			<!-- Specify @ as reply to value if you want it to be customers email -->
+			<input type="hidden" name="replyTo" value="@"> <!-- Optional -->
+			<input type="hidden" name="redirectTo" value="https://tiefblick.studio">
+			<input width="400" type="submit" value="Submit" />
+		</form>
+	</div>
 	</footer>
 </html>
