@@ -9,9 +9,9 @@
 		  --secondary-color: #20454D;
 		  --link-color1: rgba(173, 58, 40, 1);
 		  --link-color2: rgba(173, 58, 40, 0.8);
-		  --accent-color1: rgba(173, 58, 40, 0.5);
-		  --accent-color2: rgb(214, 147, 46, 0.5);
-		  --accent-color3: rgba(48, 86, 16, 0.5);
+		  --accent-color1: rgba(173, 58, 40, 1);
+		  --accent-color2: rgb(214, 147, 46, 1);
+		  --accent-color3: rgba(48, 86, 16, 1);
 		  --text-color: #20454D;
 		  --background-color: #F0EDEA;
 		}
@@ -181,6 +181,30 @@
 			left: 50%;
 			transform: translate(-50%, 0);
 		}
+		.vision
+		{
+			border-color: var(--accent-color1);
+		}
+		.mission
+		{
+			border-color: var(--accent-color2);
+		}
+		.values
+		{
+			border-color: var(--accent-color3);
+		}
+		.vision h3
+		{
+			color: var(--accent-color1); 
+		}
+		.mission h3
+		{
+			color: var(--accent-color2); 
+		}
+		.values h3
+		{
+			color: var(--accent-color3); 
+		}
 		.col {
 			width: 33%;
 			float: left;
@@ -189,8 +213,9 @@
 			box-sizing: border-box;
 			<!--border: 2px solid #333;-->
 			box-shadow: 0 0 10px rgba(0,0,0,0.1);
-			background-color: var(--accent-color1); 
-			color: var(--secondary-color); 
+			color: var(--secondary-color);
+			border-style: solid;
+			border-width: 0.1em;
 		}
 		.col-one-third {
 			width: 33%;
@@ -383,15 +408,15 @@
 	
 	<p>
 	<div class="cols">
-		<div class="col" style="background-color:var(--accent-color3)">
+		<div class="col vision">
 			<h3>Our Vision</h3>
 			<p>At Tiefblick Studio, our vision is a world where individuals of the next generation are empowered to make healthy choices for themselves and the collective.<br><br>We realize the enormous potential of games to explore hidden parts of oneself, spark dialogue, educate, and inspire people to take action towards positive social change - and the power of storytelling and immersion in games can be utilized to bring positive and affirmative experiences to our youth.<br><br>We believe that transforming our systems - socially, environmentally, and economically - starts by acknowleding the interconnectedness of all things. In play we can create opportunities to explore choice & consequence in a safe and innocent way.<br><br>As a studio, we are envisioning to bringing people together to co-create and design an environment, that supports sustainably the needs of the whole ecosystem - our team, our community, our partners, and our planet.
 		</div>
-		<div class="col" >
+		<div class="col mission" >
 			<h3>Our Mission</h3>
 			<p>At Tiefblick Studio, we believe that games and play have the power to transform individuals and communities.<br><br>Our mission is to create games that inspire self-exploration and a deeper understanding of one's inner and outer world, leading to personal empowerment and growth.<br><br>We aim to inspire the next generation to seek and embrace their unique gifts and to utilize the power of community to co-create the future.<br><br>We are committed to address important social issues and current systematic challenges through our games.</p>
 		</div>
-		<div class="col" style="background-color:var(--accent-color2)">
+		<div class="col values">
 			<h3>Our Values</h3>
 			<p>At Tiefblick Studio, our core values guide our decision-making, inform our actions, and shape our culture.<br><br>We prioritize integrity, transparency, and authenticity in all of our interactions with team members, community, and partners.<br><br>We believe in equality, fairness, and mutual respect, and we strive to create an environment where everyone feels heard, seen and valued.<br><br>We prioritize the wellbeing of our team members and recognize that mental and physical health are essential to sustainable and impactful work.<br><br>We embrace sustainability and honor the resources we are trusted with and are committed to minimizing our impact on the environment.<br><br>Finally, we believe in the power of games to transform lives and communities and are passionate about creating games that drive positive social change.</p>
 		</div>
