@@ -3,338 +3,9 @@
 <head>
 	<title>Tiefblick Studio</title>
 	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="global.css">
 	<style>
-		:root {
-		  --primary-color: #F2EAEA; 
-		  --secondary-color: #20454D;
-		  --link-color1: rgba(173, 58, 40, 1);
-		  --link-color2: rgba(173, 58, 40, 0.8);
-		  --accent-color1: rgba(173, 58, 40, 1);
-		  --accent-color2: rgb(214, 147, 46, 1);
-		  --accent-color3: rgba(48, 86, 16, 1);
-		  --text-color: #20454D;
-		  --background-color: #F0EDEA;
-		}
 		
-		/* Baskerville web font for headings */
-		h1, h2, h3, h4, h5, h6 {
-		  font-family: 'Libre Baskerville', serif;
-		  font-weight: 200;
-		  letter-spacing: 0.05em;
-		}
-		
-		body {
-		  background-color: var(--background-color);
-		  color: var(--text-color);
-		  height: 100%;
-		}
-
-		h1, h2, h3{
-		  color: var(--secondary-color);
-		  margin-top: 10px;
-		  margin-bottom: 10px;
-		}
-		h4, h5, h6 {
-		  color: var(--secondary-color);
-		  font-weight:normal;
-		}
-
-		a {
-		  color: var(--link-color1);
-		  text-decoration: none;
-		}
-
-		a:hover {
-		  color: var(--link-color2);
-		}
-
-		button {
-		  background-color: var(--primary-color);
-		  color: white;
-		}
-
-		button:hover {
-		  background-color: var(--secondary-color);
-		}
-
-		input[type="text"], input[type="email"], input[type="password"], textarea {
-		  border: 1px solid var(--secondary-color);
-		  width: 300px;
-		}
-
-		input[type="submit"] {
-		  background-color: var(--accent-color1);
-		  color: white;
-		  width: 300px;
-		}
-
-		input[type="submit"]:hover {
-		  background-color: var(--secondary-color);
-		}
-		
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: Verdana, sans-serif;
-		}
-		form {
-		  display: flex;
-		  flex-direction: column;
-		  align-items: flex-start;
-		}
-		header {
-			position:relative;
-			width:100%;
-			height:300px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		#menu {
-			height: 90px;
-			background-color: var(--primary-color);
-		}
-		#logo {
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%, 0);
-			z-index: 1;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		
-		#contact {
-			
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		img.Image { max-width: 100%; max-height:300px;}
-		#title {
-			position: relative;
-			background-color: var(--background-color);
-			top: 0px;
-			left: 0px;
-			right:0px;
-			padding: 0.4em;
-			z-index: 1;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		
-		.about {
-			position: relative;
-			left: 50%;
-			transform: translate(-50%, 0);
-			padding-bottom: 2em;
-			align-items: center;
-			justify-content: center;
-			max-width: 900px;
-		}
-		.separator {
-			background-color: #444;
-			width: 100%;
-			height: 5px;
-
-		}
-		.banner {
-			background-color: #333;
-			background-repeat: no-repeat;
-			background-position: center center;
-			background-size: cover;
-			width: 100%;
-			height: 70vh;
-			max-height: 1200px;
-			min-height: 250px;
-			position: relative;
-			overflow: hidden;
-		}
-		.banner img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			opacity: 1;
-			transition: opacity 1s ease-in-out;
-		}
-		.banner img.fade-out {
-			opacity: 0;
-		}
-		.content {
-			
-			padding: 1em;
-			text-align: justify-content;
-		}
-		.row{
-		
-		}
-		.cols {
-			display: flex;
-			width: 100%;
-			max-width:900px;
-			position:relative;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			left: 50%;
-			transform: translate(-50%, 0);
-		}
-		.vision
-		{
-			border-color: var(--accent-color1);
-		}
-		.mission
-		{
-			border-color: var(--accent-color2);
-		}
-		.values
-		{
-			border-color: var(--accent-color3);
-		}
-		.vision h3
-		{
-			color: var(--accent-color1); 
-		}
-		.mission h3
-		{
-			color: var(--accent-color2); 
-		}
-		.values h3
-		{
-			color: var(--accent-color3); 
-		}
-		.col {
-			width: 33%;
-			float: left;
-			margin-bottom: 1em;
-			padding: 0.8em;
-			box-sizing: border-box;
-			<!--border: 2px solid #333;-->
-			box-shadow: 0 0 10px rgba(0,0,0,0.1);
-			color: var(--secondary-color);
-			border-style: solid;
-			border-width: 0.1em;
-		}
-		.col-one-third {
-			width: 33%;
-			float: left;
-			box-sizing: border-box;
-			padding-bottom: 1em;
-			vertical-align: middle;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		
-		.col-two-third {
-			width: 66%;
-			float: left;
-			box-sizing: border-box;
-			padding-left:1em;
-		}
-		.about-team
-		{
-
-  width: 100%; 
-		}
-		
-		.about-team img {
-		width:33%;
-  float: left;
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-		
-		
-		.LogoContainer{
-			width:30%;
-			max-width:300px;
-		}
-		
-		/* Media query for devices in portrait mode */
-		@media (max-width: 768px) {
-		  .col {
-			flex-basis: 100%; !important;
-			width: auto; !important;
-			float: none; !important;
-			min-width: 0; !important;
-		  }
-		  .LogoContainer
-		  {
-			width: 50%;
-		  }
-		  .banner {
-			height:40vh;
-			}
-		  /* Add some margin to the top of each col div to separate them */
-		  .col + .col {
-			margin-top: 20px; !important;
-		  }
-		}
-		
-		.col h2 {
-			margin-top: 0;
-		}
-		footer {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
-		.footer-links {
-			display: flex;
-			justify-content: center;
-			margin-top: 20px;
-		}
-		.footer-links a {
-			margin: 0 10px;
-			font-size: 20px;
-		}
-		
-
-	.loading{
-	  font-size: 55px;
-	  position: relative;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  width: 60px;
-	  height: 60px;
-		
-	}
-	
-	.clearfix::after {
-	  content: "";
-	  display: block;
-	  clear: both;
-	}
-	.loading:after {
-	  content: '.';
-	  animation: dots 1s steps(5, end) infinite;
-	 
-	}
-
-	@keyframes dots {
-	  0%, 20% {
-		color: rgba(0,0,0,0);
-		text-shadow:
-		  .25em 0 0 rgba(0,0,0,0),
-		  .5em 0 0 rgba(0,0,0,0);}
-	  40% {
-		color: white;
-		text-shadow:
-		  .25em 0 0 rgba(0,0,0,0),
-		  .5em 0 0 rgba(0,0,0,0);}
-	  60% {
-		text-shadow:
-		  .25em 0 0 white,
-		  .5em 0 0 rgba(0,0,0,0);}
-	  80%, 100% {
-		text-shadow:
-		  .25em 0 0 white,
-		  .5em 0 0 white;}}
 		
 		
 	</style>
@@ -342,6 +13,7 @@
 	<!--<link rel="stylesheet" href="styles.css">-->
 	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
 	<link rel="icon" type="image/png" href="images/favicon.png"/>
+	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
 	<script>
 		var bannerimages = [
 		"images/Screenshot_2022-09-26_005424.webp",
@@ -382,6 +54,15 @@
 		}
 		
 		window.onload = preloadimages;
+		
+		window.onloadTurnstileCallback = function () {
+    turnstile.render('#example-container', {
+        sitekey: '<YOUR_SITE_KEY>',
+        callback: function(token) {
+            console.log(`Challenge Success ${token}`);
+        },
+    });
+};
 	</script>
 </head>
 <body>
@@ -480,16 +161,34 @@
 	<div id="contact">
 	
 		<form action="https://api.staticforms.xyz/submit" method="post">
-			<!-- Replace with accesKey sent to your email -->
-			<input type="hidden" name="accessKey" value="252b6a3a-8d16-43cd-9ba0-767d0c382d80"> <!-- Required -->
-			Name:<input width="400" type="text" name="name"><br> <!-- Optional -->
-			<input type="hidden" name="subject" value="Tiefblick Studio Website Contact Form">
-			Email:<input width="400" type="email" name="email"><br> <!-- Optional -->
-			Message:<textarea width="400" height"100" name="message"></textarea><br> <!-- Optional -->
-			<!-- Specify @ as reply to value if you want it to be customers email -->
-			<input type="hidden" name="replyTo" value="@"> <!-- Optional -->
+		<input type="hidden" name="accessKey" value="252b6a3a-8d16-43cd-9ba0-767d0c382d80">
+		 <div id="honeypot" class="field">
+          <label class="label">Subject</label>
+          <div class="control">
+			<input type="text" placeholder="Enter Your Subject" name="honeypot">
+			</div>
+        </div>
+		<div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input class="input" type="text" name="name" placeholder="Enter Your Name" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="email" name="email" placeholder="Enter Your Email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea class="textarea" name="message" placeholder="Enter Your Message" required></textarea>
+          </div>
+        </div>
+        <button class="button is-primary" type="Submit">Submit</button>
 			<input type="hidden" name="redirectTo" value="https://tiefblick.studio">
-			<input width="400" type="submit" value="Submit" />
+			<!--<input width="400" type="submit" value="Submit" />-->
 		</form>
 	</div>
 	</footer>
