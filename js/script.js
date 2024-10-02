@@ -6,10 +6,5 @@ form.addEventListener('submit', function (event) {
     fetch(`${url}/${query}`, {
         method: 'POST',
         body: new URLSearchParams(new FormData(event.target))
-    }).then(
-		{
-			this.reset.bind(this);
-			form.reset();
-		}
-	);
+    }).then(this.reset.bind(this)).then(form.reset());
 });
